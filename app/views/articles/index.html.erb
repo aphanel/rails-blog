@@ -1,0 +1,22 @@
+<h1>Listenn ar Pennad</h1>
+
+<%= link_to 'Nevez pennad', new_article_path %> 
+<table>
+  <tr>
+    <th>Titl</th>
+    <th>Testenn</th>
+    <th></th>
+  </tr>
+ 
+  <% @articles.each do |article| %>
+    <tr>
+      <td><%= article.title %></td>
+      <td><%= article.text %></td>
+      <td><%= link_to 'Diskouez', article_path(article) %></td>
+      <td><%= link_to 'Embann', edit_article_path(article) %></td>
+      <td><%= link_to 'Distrujañ', article_path(article),
+              method: :delete,
+              data: { confirm: 'Sur oc\'h?' } %></td>
+    </tr>
+  <% end %>
+</table>

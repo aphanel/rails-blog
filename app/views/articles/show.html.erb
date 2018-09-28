@@ -1,0 +1,11 @@
+<p>
+    <strong>Titl:</strong>
+    <%= @article.title %>
+</p>
+<p>
+    <strong>Testenn:</strong>
+    <%= @article.text %>
+</p>    
+
+<%= link_to 'Embann', edit_article_path(@article) %>
+<%= link_to 'Distreiñ', articles_path %>
